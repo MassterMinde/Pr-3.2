@@ -14,6 +14,6 @@ public class Sofas extends ABS_furniture {
 
     @Override
     String check() {
-        return "\nКачество: "+getName()+"\nМатериал: "+getType()+"\nМягкость 1/5: "+getSoftness1to5()+"\nЦена: "+getCost();
+        return "\nКачество: "+getName()+"\nМатериал: "+getType()+"\nМягкость 1-5: "+getSoftness1to5()+"\nЦена: "+getCost();
     }
 }

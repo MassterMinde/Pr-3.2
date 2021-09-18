@@ -11,26 +11,38 @@ public class FurnitureShop {
         tablesKat[1]=new Tables('N',"Изысканный стол","Красное дерево",73000);
         tablesKat[2]=new Tables('Y',"Iстол","Алюмиинй",80999);
     }
-    public void katalog(){
-        System.out.println("Каталог ::\n\nДиваны:");
+    public void sofKatalog(){
+        System.out.println("\nДиваны:");
         for (int i = 0; i < sofN; i++) {
-            System.out.print("\n"+(i+1)+") Название: "+sofasKat[i].getName()+"   Материал: "+sofasKat[i].getType()+"   Уровень мягкости 1/5: "+sofasKat[i].getSoftness1to5()+"   Цена: "+sofasKat[i].getCost());
+            System.out.print("\n"+(i+1)+") Название: "+sofasKat[i].getName()+"   Материал: "+sofasKat[i].getType()+"   Уровень мягкости 1-5: "+sofasKat[i].getSoftness1to5()+"   Цена: "+sofasKat[i].getCost());
         }
-        System.out.print("\n\nСтолы:\n");
+    }
+    public void tabKatalog(){
+        System.out.print("\nСтолы:\n");
         for (int i = 0; i < tabN; i++) {
             System.out.print("\n"+(i+1)+") Название: "+tablesKat[i].getName()+"   Материал: "+tablesKat[i].getType()+"   Возможность расширения: "+tablesKat[i].getMoreSpace()+"   Цена: "+tablesKat[i].getCost());
         }
+    }
+    public void katalog(){
+        System.out.println("Каталог : :");
+        sofKatalog();
+        tabKatalog();
     }
     public void byuSofa(int n){
         n--;
         for (; n < sofasKat.length-1; n++) {
             sofasKat[n]=sofasKat[n+1];
         }
-        sofasKat[2]=null;
+        sofasKat[sofasKat.length-1]=null;
         this.sofN--;
     }
-    public void buyTable(){
-
+    public void buyTable(int n){
+        n--;
+        for (; n < tablesKat.length-1; n++) {
+            tablesKat[n]=tablesKat[n+1];
+        }
+        tablesKat[tablesKat.length-1]=null;
+        this.tabN--;
     }
 }
 //Создать абстрактный класс, описывающий мебель. С помощью наследования реализовать различные виды мебели.
