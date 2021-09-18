@@ -1,6 +1,6 @@
 public abstract class ABS_furniture {
     String type;
-    String quality;
+    String name;
     int cost;
 
     public int getCost() {
@@ -11,16 +11,16 @@ public abstract class ABS_furniture {
         return type;
     }
 
-    public String getQuality() {
-        return quality;
+    public String getName() {
+        return name;
     }
 
     public void setType(String type) {
         this.type = type;
     }
 
-    public void setQuality(String quality) {
-        this.quality = quality;
+    public void setName(String name) {
+        this.name = name;
     }
 
     public void setCost(int cost) {
